@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-export default class Menu extends Component {
+export default class Home extends Component {
   render() {
     return (
-      <div className='Menu'>
-        Main Menu4
+      <div className='Home'>
+        Home content
       </div>
     );
   }
