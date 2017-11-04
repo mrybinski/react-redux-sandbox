@@ -22,7 +22,10 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loaders: ['babel-loader']
+                loaders: ['babel-loader'],
+                query: {
+                    plugins: ['transform-class-properties']
+                }
             }
         ],
         rules: [
@@ -30,7 +33,7 @@ module.exports = {
               test: /\.jsx?$/,
               enforce: 'pre',
     
-              loaders: ['babel-loader', 'eslint-loader?emitWarning=true'],
+              loaders: ['babel-loader?plugins[]=transform-class-properties', 'eslint-loader?emitWarning=true'],
             },
           ],
     },

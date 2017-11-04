@@ -1,17 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import App from './components/App';
-import Home from './components/Home';
+import HomeContainer from './components/HomeContainer';
 import About from './components/About';
 
+import configureStore from './root/configureStore';
+
+const store = configureStore();
+
 ReactDOM.render(
-  <BrowserRouter>
-    <App>
-      <Route path='/' exact component={ Home } />
-      <Route path='/about' component={ About } />
-    </App>
-  </BrowserRouter>,
-  document.getElementById('app')
+    <Provider store={ store }>
+        <BrowserRouter>
+            <App>
+                <Route path='/' exact component={ HomeContainer } />
+                <Route path='/about' component={ About } />
+            </App>
+        </BrowserRouter>
+    </Provider>,
+    document.getElementById('app')
 );
