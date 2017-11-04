@@ -44,6 +44,7 @@ typings/
 
 # eslint
 .eslintrc
+.eslintignore
 
 # Optional eslint cache
 .eslintcache

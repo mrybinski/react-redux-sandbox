@@ -1,6 +1,8 @@
-const htmlWebpackPlugin = require('html-webpack-plugin');
-const htmlWebpackPluginConfig = new htmlWebpackPlugin({
-  template: __dirname + '/app/index.html',
+const path = require('path');
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const htmlWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: path.join(__dirname, '/app/index.html'),
   filename: 'index.html',
   inject: 'body'
 });
@@ -8,7 +10,7 @@ const htmlWebpackPluginConfig = new htmlWebpackPlugin({
 const webpack = require('webpack');
 
 module.exports = {
-    context: __dirname + "/app",
+    context:  path.join(__dirname, '/app'),
     entry: {
         javascript: "./app.js",
     },
