@@ -1,0 +1,31 @@
+{
+  "name": "react-redux-sandbox",
+  "version": "1.0.0",
+  "description": "Simple sandbox with react and redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrybinski/react-redux-sandbox.git"
+  },
+  "keywords": [
+    "react",
+    "redux"
+  ],
+  "author": "Michał Rybiński",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrybinski/react-redux-sandbox/issues"
+  },
+  "homepage": "https://github.com/mrybinski/react-redux-sandbox#readme",
+  "dependencies": {
+    "react": "^16.0.0",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  }
+}
