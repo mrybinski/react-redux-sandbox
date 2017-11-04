@@ -1,10 +1,31 @@
+var htmlWebpackPlugin = require('html-webpack-plugin');
+var htmlWebpackPluginConfig = new htmlWebpackPlugin({
+  template: __dirname + '/app/index.html',
+  filename: 'index.html',
+  inject: 'body'
+});
+
 module.exports = {
     context: __dirname + "/app",
-  
-    entry: "./app.js",
-  
+    entry: {
+        javascript: "./app.js",
+    },
+    resolve: {
+        extensions: ['.js', '.jsx', '.json']
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loaders: ["babel-loader"]
+            }
+        ]
+    },
     output: {
-      filename: "app.js",
-      path: __dirname + "/dist",
-    }
-  };
+        filename: "app.js",
+        path: __dirname + "/dist",
+    },
+
+    plugins: [htmlWebpackPluginConfig]
+};
