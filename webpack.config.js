@@ -20,9 +20,17 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loaders: ["babel-loader"]
+                loaders: ['babel-loader']
             }
-        ]
+        ],
+        rules: [
+            {
+              test: /\.jsx?$/,
+              enforce: 'pre',
+    
+              loaders: ['babel-loader', 'eslint-loader?emitWarning=true'],
+            },
+          ],
     },
     output: {
         filename: "app.js",
