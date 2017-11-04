@@ -1,9 +1,11 @@
-var htmlWebpackPlugin = require('html-webpack-plugin');
-var htmlWebpackPluginConfig = new htmlWebpackPlugin({
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const htmlWebpackPluginConfig = new htmlWebpackPlugin({
   template: __dirname + '/app/index.html',
   filename: 'index.html',
   inject: 'body'
 });
+
+const webpack = require('webpack');
 
 module.exports = {
     context: __dirname + "/app",
@@ -27,5 +29,7 @@ module.exports = {
         path: __dirname + "/dist",
     },
 
-    plugins: [htmlWebpackPluginConfig]
+    plugins: [
+        htmlWebpackPluginConfig
+    ]
 };
